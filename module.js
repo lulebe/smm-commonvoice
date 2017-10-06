@@ -43,13 +43,19 @@ speech.addCommands({
 //fun
 speech.addCommands({
   "Wer bist du (eigentlich)": () => {
-    responsiveVoice.speak("Ich bin hier der Spiegel.", 'Deutsch Female', () => {renderer.showVoiceOverlay(false)})
+    responsiveVoice.speak("Ich bin hier der Spiegel.", 'Deutsch Female', {onend: () => {
+      renderer.showVoiceOverlay(false)
+    }})
   },
   "Wie sehe ich aus": () => {
-    responsiveVoice.speak("Gar nicht übel, aber die Haare könnten besser sitzen.", 'Deutsch Female', () => {renderer.showVoiceOverlay(false)})
+    responsiveVoice.speak("Gar nicht übel, aber die Haare könnten besser sitzen.", 'Deutsch Female', {onend: () => {
+      renderer.showVoiceOverlay(false)
+    }})
   },
   "Was kostest du": () => {
-    responsiveVoice.speak("So etwa 280 Euro denke ich.", 'Deutsch Female', () => {renderer.showVoiceOverlay(false)})
+    responsiveVoice.speak("So etwa 450 Euro denke ich.", 'Deutsch Female', {onend: () => {
+      renderer.showVoiceOverlay(false)
+    }})
   },
   "Wie funktionierst du": () => {
     responsiveVoice.speak(`
@@ -64,6 +70,8 @@ speech.addCommands({
       Verkehr und vieles mehr. Diese können über meine App am Handy hinzugefügt und bearbeitet
       werden. Der Computer, der das alles verarbeitet, ist ein Raspberry Pi 3, der auch in
       diesem Kasten steckt.
-      `, 'Deutsch Female', () => {renderer.showVoiceOverlay(false)})
+      `, 'Deutsch Female', {onend: () => {
+        renderer.showVoiceOverlay(false)
+      }})
   },
 })
